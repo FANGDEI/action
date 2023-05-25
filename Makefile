@@ -49,6 +49,7 @@ clean: ## Remove previous build
 
 push: clean build ## push image manually
 	@echo "make push"
+	echo $(IMAGE_NAME)
 	@docker build . -t $(IMAGE_NAME)
 	@docker push $(IMAGE_NAME)
 
