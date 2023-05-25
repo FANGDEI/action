@@ -27,4 +27,4 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Push Image
-        run: echo ${{ github.ref.split('/')[2] }}
+        run: echo $(echo ${{ github.ref }} | cut -d'/' -f3)
