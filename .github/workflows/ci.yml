@@ -27,4 +27,4 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Push Image
-        run: make push
+        run: make push BRANCH=${{ github.ref.split('/')[2] }}

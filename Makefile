@@ -48,6 +48,7 @@ clean: ## Remove previous build
 	@rm -f $(BIN_NAME)
 
 push: clean build ## push image manually
+	echo ${BRANCH}
 	@echo "make push"
 	@docker build . -t $(IMAGE_NAME)
 	@docker push $(IMAGE_NAME)
