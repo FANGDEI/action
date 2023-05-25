@@ -49,7 +49,6 @@ clean: ## Remove previous build
 
 push: clean build ## push image manually
 	@echo "make push"
-	echo $(shell git branch --no-color 2> /dev/null|sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' -e 's/\//\_/g')
 	@docker build . -t $(IMAGE_NAME)
 	@docker push $(IMAGE_NAME)
 
