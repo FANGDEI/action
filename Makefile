@@ -41,7 +41,7 @@ dep: ## Get the dependencies
 
 build: dep ## Build the binary file
 	@echo "make build"
-	@go build -o $(BIN_NAME) -v main.go
+	@CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"' -o ${BIN_NAME} main.go
 
 clean: ## Remove previous build
 	@echo "make clean"
