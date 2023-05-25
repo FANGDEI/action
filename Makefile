@@ -41,7 +41,7 @@ dep: ## Get the dependencies
 
 build: dep ## Build the binary file
 	@echo "make build"
-	@go build -tags netgo -o $(BIN_NAME) -v main.go
+	@go build -o $(BIN_NAME) -v main.go
 
 clean: ## Remove previous build
 	@echo "make clean"
